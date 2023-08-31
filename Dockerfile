@@ -1,6 +1,6 @@
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
-LABEL org.opencontainers.image.source https://github.com/mauricionofre/persons.customers
-
+LABEL org.opencontainers.image.source=https://github.com/mauricionofre/persons.customers
+LABEL org.opencontainers.image.description="persons.customers"
 WORKDIR /app
 
 COPY . ./
