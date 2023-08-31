@@ -4,9 +4,9 @@ env:
   DOTNET_VERSION: '7.0.x'
 
 on:
-  push:
+  push: 
     branches:
-      - master
+      - master 
     tags:
       - v*.*.*
 
