@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: loyalty-person-deployment
+  namespace: 
+  labels:
+    app: loyalty-person
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: loyalty-person
+  template:
+    metadata:
+      labels:
+        app: loyalty-person
+    spec:
+      containers:
+      - name: loyalty-person
+        image: ghcr.io/mauricionofre/loyalty.card.person:latest
+        ports:
+        - containerPort: 8080
+        env:
+        - name: AllowedHosts
+          value: "*"
+      imagePullSecrets: 
+        - name: github-secret
+    
